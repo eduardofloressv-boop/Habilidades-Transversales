@@ -8,7 +8,7 @@
     <style>
         body { 
             font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; 
-            background-color: #f1f5f9; 
+            background-color: #f0f4f8; 
             color: #1e293b; 
             display: flex; 
             justify-content: center; 
@@ -22,33 +22,37 @@
             background: white;
             padding: 2.5rem; 
             border-radius: 24px; 
-            box-shadow: 0 20px 50px rgba(0,0,0,0.1); 
+            box-shadow: 0 20px 50px rgba(0,0,0,0.08); 
             text-align: center; 
             max-width: 450px; 
             width: 90%; 
-            border-top: 10px solid #10b981;
+            border-top: 8px solid #3b82f6; /* Azul profesional */
+            position: relative; /* Para el botón flotante */
         }
 
-        .logo-container {
-            width: 130px;
-            height: 130px;
+        /* NUEVO ICONO PROFESIONAL */
+        .icon-header {
+            width: 100px;
+            height: 100px;
             margin: 0 auto 1.5rem;
             display: flex;
             justify-content: center;
             align-items: center;
-        }
-        
-        .logo-container img {
-            max-width: 100%;
-            height: auto;
+            background-color: #eff6ff; /* Azul muy claro */
             border-radius: 50%;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            color: #3b82f6; /* Azul principal */
+            border: 4px solid #dbeafe;
+        }
+        .icon-header i {
+            width: 60px;
+            height: 60px;
         }
 
-        h1 { color: #0f172a; font-size: 1.8rem; margin-bottom: 0.5rem; font-weight: 800; }
+        h1 { color: #0f172a; font-size: 1.8rem; margin-bottom: 0.3rem; font-weight: 800; }
         .subtitle { color: #64748b; font-size: 0.95rem; margin-bottom: 2rem; line-height: 1.5; }
 
-        .btn { 
+        /* ESTILO DEL MENÚ PRINCIPAL */
+        .btn-menu { 
             display: flex;
             align-items: center;
             justify-content: center;
@@ -58,24 +62,49 @@
             padding: 16px; 
             margin-bottom: 12px; 
             border-radius: 16px; 
-            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+            transition: all 0.3s ease; 
             font-weight: 700; 
             font-size: 1rem;
         }
+        .btn-menu:hover { transform: translateY(-2px); box-shadow: 0 8px 15px rgba(0,0,0,0.1); }
 
-        .btn:hover { transform: translateY(-3px); box-shadow: 0 8px 15px rgba(0,0,0,0.1); }
+        .btn-gender { background-color: #8b5cf6; } /* Púrpura */
+        .btn-gender:hover { background-color: #7c3aed; }
 
-        .btn-gender { background-color: #a855f7; } 
-        .btn-jobs { background-color: #0ea5e9; } 
-        .btn-skills { background-color: #10b981; }
+        .btn-jobs { background-color: #0ea5e9; } /* Azul Cielo */
+        .btn-jobs:hover { background-color: #0284c7; }
 
-        /* Botón de WhatsApp */
-        .btn-whatsapp { 
-            background-color: #25d366; 
-            margin-top: 10px;
-            border: 2px solid transparent;
+        .btn-skills { background-color: #10b981; } /* Verde Esmeralda */
+        .btn-skills:hover { background-color: #059669; }
+
+        /* BOTÓN DE WHATSAPP FLOTANTE Y APARTE */
+        .btn-whatsapp-floating {
+            position: absolute;
+            bottom: 25px;
+            right: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background-color: #25d366;
+            color: white;
+            text-decoration: none;
+            padding: 12px 18px;
+            border-radius: 50px; /* Muy redondeado */
+            font-weight: 700;
+            font-size: 0.9rem;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            z-index: 10;
         }
-        .btn-whatsapp:hover { background-color: #128c7e; }
+        .btn-whatsapp-floating:hover {
+            transform: scale(1.05);
+            background-color: #128c7e;
+        }
+        .btn-whatsapp-floating i {
+            width: 20px;
+            height: 20px;
+        }
 
         .footer { 
             margin-top: 2.5rem; 
@@ -83,44 +112,15 @@
             color: #94a3b8; 
             border-top: 1px solid #f1f5f9; 
             padding-top: 1.5rem; 
+            padding-bottom: 10px; /* Espacio para el botón flotante */
         }
-        .brand { font-weight: 800; color: #10b981; display: block; margin-top: 4px; font-size: 1rem; }
+        .brand { font-weight: 800; color: #3b82f6; display: block; margin-top: 4px; font-size: 1rem; }
     </style>
 </head>
 <body>
     <div class="card">
-        <div class="logo-container">
-            <img src="Logo clinica.jpeg" alt="Logo Psic. Eduardo Flores">
-        </div>
+        <div class="icon-header">
+            <i data-lucide="brain-circuit"></i> </div>
 
         <h1>Centro de Recursos</h1>
-        <p class="subtitle">Psic. Samuel Eduardo Flores León<br>Especialista en Educación</p>
-        
-        <a href="https://eduardofloressv-boop.github.io/Educaci-n-con-enfoque-de-g-nero/" class="btn btn-gender" target="_blank">
-            <i data-lucide="sparkles"></i> Educación con Enfoque de Género
-        </a>
-
-        <a href="https://eduardofloressv-boop.github.io/Infografia-Empleabilidad/" class="btn btn-jobs" target="_blank">
-            <i data-lucide="file-text"></i> Guía de Empleabilidad y C.V.
-        </a>
-
-        <a href="https://eduardofloressv-boop.github.io/Introduccion-a-las-Habilidades-para-la-vida/" class="btn btn-skills" target="_blank">
-            <i data-lucide="brain"></i> Habilidades para la Vida
-        </a>
-
-        <a href="https://wa.me/50363135528?text=Hola%20Psic.%20Eduardo,%20me%20gustaría%20solicitar%20una%20cita." class="btn btn-whatsapp" target="_blank">
-            <i data-lucide="message-circle"></i> Para citas WhatsApp: 6313-5528
-        </a>
-        
-        <div class="footer">
-            Hecho por: <span class="brand">Psic. Eduardo Flores</span>
-            Psicología Social y Formación Docente<br>
-            El Salvador, 2026
-        </div>
-    </div>
-
-    <script>
-        lucide.createIcons();
-    </script>
-</body>
-</html>
+        <p class="subtitle">Psic. Samuel Eduardo
