@@ -15,6 +15,7 @@
             align-items: center; 
             min-height: 100vh; 
             margin: 0; 
+            padding: 20px 0;
         }
 
         .card { 
@@ -29,7 +30,6 @@
             position: relative;
         }
 
-        /* Encabezado sin imagen */
         .header-icon {
             color: #6366f1;
             margin-bottom: 1rem;
@@ -54,9 +54,10 @@
             font-size: 0.95rem;
         }
 
-        .btn-gender { background-color: #8b5cf6; }
-        .btn-jobs { background-color: #3b82f6; }
-        .btn-skills { background-color: #10b981; }
+        .btn-gender { background-color: #8b5cf6; } /* Púrpura */
+        .btn-jobs { background-color: #3b82f6; }   /* Azul */
+        .btn-skills { background-color: #10b981; } /* Verde */
+        .btn-emotion { background-color: #f59e0b; } /* Naranja para Gestión Emocional */
 
         .btn-menu:hover { opacity: 0.9; transform: translateY(-1px); }
 
@@ -97,6 +98,10 @@
         <p class="subtitle">Psic. Samuel Eduardo Flores León<br>Especialista en Educación</p>
         
         <nav>
+            <a href="https://eduardofloressv-boop.github.io/Gesti-n-Emocional/" class="btn-menu btn-emotion" target="_blank">
+                <i data-lucide="heart-handshake" size="18"></i> Gestión Emocional
+            </a>
+
             <a href="https://eduardofloressv-boop.github.io/Educaci-n-con-enfoque-de-g-nero/" class="btn-menu btn-gender" target="_blank">
                 <i data-lucide="sparkles" size="18"></i> Educación con Enfoque de Género
             </a>
@@ -122,7 +127,6 @@
     </div>
 
     <script>
-        // Inicializa los iconos automáticamente
         lucide.createIcons();
     </script>
 </body>
